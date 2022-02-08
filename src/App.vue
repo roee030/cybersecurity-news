@@ -3,7 +3,9 @@
     <Title />
     <Button label="New Post" icon="+" />
   </div>
+  <div class="root_list_items">
   <ListItems :items="items" />
+  </div>
 </template>
 
 <script>
@@ -16,6 +18,15 @@ export default {
     data(){
       return{
           items: [
+              {
+                id:0,
+                headLine:"IsTrickBot Indestructible?",
+                tag:"vulnerabilities",
+                description:"sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                likes:0,
+                comments:0,
+                date:"January 30, 2021",
+              },
               {
                 id:0,
                 headLine:"IsTrickBot Indestructible?",
@@ -41,6 +52,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
+.root_list_items{
+  margin-top: 50px;
+}
 </style>

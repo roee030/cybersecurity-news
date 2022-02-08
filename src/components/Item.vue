@@ -39,7 +39,7 @@ export default {
 
 <style>
 .item_root{
-    margin: 33px 30px;
+    padding: 33px 30px;
     display: flex;
     position: relative;
     width: 858px;
@@ -73,7 +73,7 @@ export default {
 .item_created_date{
     position: absolute;
     right: 0;
-    top: 0;
+    top: 10;
 }
 
 .item_action{
@@ -83,6 +83,7 @@ export default {
     opacity: 0.7;
 }
 .item_actions{
+    margin-top: auto;
     font-size:16px;
     width: 597px;
     height: 36px;
