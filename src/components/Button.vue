@@ -1,9 +1,8 @@
 <template>
- <button class="button_root">
-     <span class="button_icon">{{icon}}</span>
-     <span class="button_text">{{label}}</span>
-     </button>
-
+    <button class="button_root">
+        <span class="button_icon">{{icon}}</span>
+        <span class="button_text">{{label}}</span>
+    </button>
 </template>
 
 <script>
