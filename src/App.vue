@@ -3,6 +3,7 @@
     <Title />
     <Button label="New Post" icon="+" />
   </div>
+  <NewPost/>
   <div class="root_list_items">
   <ListItems :items="items" />
   </div>
@@ -12,6 +13,7 @@
 import Title from './components/Title.vue'
 import Button from './components/Button.vue'
 import ListItems from './components/ListItems.vue'
+import NewPost from './components/NewPost.vue'
 
 export default {
   name: 'App',
@@ -42,7 +44,8 @@ export default {
   components: {
     Title,
     Button,
-    ListItems
+    ListItems,
+    NewPost,
   }
 }
 </script>
