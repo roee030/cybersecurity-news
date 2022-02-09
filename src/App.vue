@@ -1,12 +1,16 @@
 <template>
-  <div class="root_header">
-    <Title />
-    <Button label="New Post" icon="+" />
+  <div v-bind:class="{ disabled: isModelOpen }">
+    <div class="root_header">
+      <Title />
+      <Button label="New Post" icon="+" />
+    </div>
+    <div class="root_list_items">
+    <ListItems :items="items" />
+    </div>
   </div>
-  <NewPost/>
-  <div class="root_list_items">
-  <ListItems :items="items" />
-  </div>
+    <div v-if="isModelOpen" class="new_post_model">
+      <NewPost/>
+    </div>
 </template>
 
 <script>
@@ -38,7 +42,8 @@ export default {
                 comments:0,
                 date:"January 30, 2021",
               },
-          ]
+          ],
+          isModelOpen:true,
       }
   },
   components: {
@@ -46,7 +51,7 @@ export default {
     Button,
     ListItems,
     NewPost,
-  }
+  },
 }
 </script>
 
@@ -60,5 +65,16 @@ export default {
 
 .root_list_items{
   margin-top: 50px;
+}
+
+.new_post_model{
+    position: absolute;
+    top: 73px;
+    right: 50%;
+    transform: translate(50%, 0px);
+}
+
+.disabled{
+  opacity: 0.3;
 }
 </style>

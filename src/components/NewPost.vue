@@ -70,6 +70,7 @@ export default {
 
     .new_post_wrapper{
         margin: 54px 88px ;
+        position: absolute;
     }
 
     .new_post_headline{
