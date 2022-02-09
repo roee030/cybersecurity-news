@@ -5,11 +5,11 @@
       <Button @click="toggleNewPostModel" label="New Post" icon="+" />
     </div>
     <div class="root_list_items">
-    <ListItems :items="items" />
+    <ListItems :items="items"/>
     </div>
   </div>
     <div v-if="isModelOpen" class="new_post_model">
-      <NewPost @toggle-new-post-model="toggleNewPostModel" />
+      <NewPost @toggle-new-post-model="toggleNewPostModel"  @add-new-post="addNewPost"/>
     </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
                 description:"sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
                 likes:0,
                 comments:0,
-                date:"January 30, 2021",
+                date:"01/30/2021",
               },
               {
                 id:0,
@@ -40,15 +40,31 @@ export default {
                 description:"sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
                 likes:0,
                 comments:0,
-                date:"January 30, 2021",
+                date:"01/30/2021",
               },
           ],
-          isModelOpen:true,
+          isModelOpen:false,
       }
   },
   methods: {
     toggleNewPostModel(){
       this.isModelOpen = !this.isModelOpen;
+    },
+    addNewPost(title,category,description,tag){
+      this.items=[
+        {
+          id:this.items.length,
+           headLine:title,
+            tag:tag,
+            description:description,
+            likes:0,
+            comments:0,
+            date:`${new Date().getMonth + 1}/${new Date().getDate()}/${new Date().getFullYear()}`,
+        },
+        ...this.items,
+      ]
+      
+      console.log(title,category,description,tag);
     }
   },
   components: {

@@ -30,9 +30,12 @@
             <div class="input_title">Post Description</div>
             <textarea class="post_description_input" v-model="description" placeholder="After a takedown attempt in 2020 by the global law enforcement, that somehow wasn't that successful, a new TrickBot versi n has arrived."></textarea>
         </div>
+      <div v-if="formError" class="new_post_error">
+          Please review and correct the error 
+      </div>
       </div>
       <div class="new_post_submit_button">
-        <Button label="Submit Post"/>
+        <Button @click="submitPost()" label="Submit Post"/>
       </div>
       <div @click="toggleNewPostModel()" class="new_post_close_button">X</div>
   </div>
@@ -49,23 +52,33 @@ export default {
       tag:'',
       category:'',
       description:'',
+      formError:false,
     }
   },
     components: {
     Button,
   },
   methods: {
-      toggleNewPostModel(){
-         this.$emit('toggle-new-post-model')
-      }
-  }
+        toggleNewPostModel(){
+            this.$emit('toggle-new-post-model')
+        },
+        submitPost(){
+            this.formError = false;
+            if(!(this.title && this.tag && this.category && this.description )){
+                this.formError = true;
+                return
+            }
+            this.$emit('add-new-post',this.title,this.category,this.description,this.tag)
+            this.toggleNewPostModel()
+        }
+  },
 }
 </script>
 
 <style>
     .new_post_root{
         width:774px;
-        height:1034px;
+        height:800px;
         background-color:white;
         border-radius: 20px;
         display: flex;
@@ -144,5 +157,10 @@ export default {
         left: 25px;
         color: #D6D6D6;
         cursor: pointer;
+    }
+
+    .new_post_error{
+        text-align: center;
+        color: #d32f2f;
     }
 </style>
