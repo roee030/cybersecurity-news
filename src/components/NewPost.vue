@@ -128,7 +128,7 @@ export default {
         height: 197px;
         background: #F3F3F3 0% 0% no-repeat padding-box;
         font-size: 22px;
-        font-family: 'Roboto';
+        font-family: inherit;;
     }
 
     .new_post_submit_button{
