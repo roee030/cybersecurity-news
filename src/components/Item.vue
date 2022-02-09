@@ -23,7 +23,7 @@
           </div>
       </div>
       <div class="item_created_date">
-          January 30, 2021
+          {{item.date}}
       </div>
   </div>
 </template>

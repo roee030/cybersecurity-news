@@ -31,7 +31,7 @@ export default {
                 description:"sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
                 likes:0,
                 comments:0,
-                date:"01/30/2021",
+                date:"January 30, 2021",
               },
               {
                 id:0,
@@ -40,10 +40,11 @@ export default {
                 description:"sadfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
                 likes:0,
                 comments:0,
-                date:"01/30/2021",
+                date:"January 30, 2021",
               },
           ],
           isModelOpen:false,
+          months:["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
       }
   },
   methods: {
@@ -59,7 +60,7 @@ export default {
             description:description,
             likes:0,
             comments:0,
-            date:`${new Date().getMonth + 1}/${new Date().getDate()}/${new Date().getFullYear()}`,
+            date:`${this.months[(Number(new Date().getMonth()))]} ${new Date().getDate()}, ${new Date().getFullYear()}`,
         },
         ...this.items,
       ]
