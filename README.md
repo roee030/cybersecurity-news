@@ -2,7 +2,7 @@
 <br />
 <p align="center">
     <a href="https://github.com/roee030/cybersecurity-news">	
-     <img src="public/cover.png" alt="Logo" width="180" height="180">
+     <img src="public/cover.png" alt="Logo" width="380" height="180">
   </a>
 
 
