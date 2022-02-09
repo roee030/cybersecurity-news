@@ -31,7 +31,10 @@
             <textarea class="post_description_input" v-model="description" placeholder="After a takedown attempt in 2020 by the global law enforcement, that somehow wasn't that successful, a new TrickBot versi n has arrived."></textarea>
         </div>
       </div>
-      <Button label="Submit Post"/>
+      <div class="new_post_submit_button">
+        <Button label="Submit Post"/>
+      </div>
+      <div class="new_post_close_button">X</div>
   </div>
 </template>
 
@@ -62,6 +65,7 @@ export default {
         border-radius: 20px;
         display: flex;
         flex-direction: column;
+        position: relative;
     }
 
     .new_post_wrapper{
@@ -119,5 +123,20 @@ export default {
         background: #F3F3F3 0% 0% no-repeat padding-box;
         font-size: 22px;
         font-family: 'Roboto';
+    }
+
+    .new_post_submit_button{
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translate(20%, -50px);
+    }
+
+    .new_post_close_button{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        color: #D6D6D6;
+        cursor: pointer;
     }
 </style>
