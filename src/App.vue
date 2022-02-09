@@ -2,14 +2,14 @@
   <div v-bind:class="{ disabled: isModelOpen }">
     <div class="root_header">
       <Title />
-      <Button label="New Post" icon="+" />
+      <Button @click="toggleNewPostModel" label="New Post" icon="+" />
     </div>
     <div class="root_list_items">
     <ListItems :items="items" />
     </div>
   </div>
     <div v-if="isModelOpen" class="new_post_model">
-      <NewPost/>
+      <NewPost @toggle-new-post-model="toggleNewPostModel" />
     </div>
 </template>
 
@@ -45,6 +45,11 @@ export default {
           ],
           isModelOpen:true,
       }
+  },
+  methods: {
+    toggleNewPostModel(){
+      this.isModelOpen = !this.isModelOpen;
+    }
   },
   components: {
     Title,

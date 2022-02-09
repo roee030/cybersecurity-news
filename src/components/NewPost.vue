@@ -34,7 +34,7 @@
       <div class="new_post_submit_button">
         <Button label="Submit Post"/>
       </div>
-      <div class="new_post_close_button">X</div>
+      <div @click="toggleNewPostModel()" class="new_post_close_button">X</div>
   </div>
 </template>
 
@@ -53,6 +53,11 @@ export default {
   },
     components: {
     Button,
+  },
+  methods: {
+      toggleNewPostModel(){
+         this.$emit('toggle-new-post-model')
+      }
   }
 }
 </script>
