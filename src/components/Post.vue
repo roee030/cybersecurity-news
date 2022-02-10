@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: 'Item',
+    name: 'Post',
     props:{
         item: Object,
     }
