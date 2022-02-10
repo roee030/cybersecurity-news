@@ -5,7 +5,7 @@
       <Button @click="toggleNewPostModel" label="New Post" icon="+" />
     </div>
     <div class="root_list_items">
-    <ListItems :items="items"/>
+    <PostList :items="items"/>
     </div>
   </div>
     <div v-if="isModelOpen" class="new_post_model">
@@ -16,7 +16,7 @@
 <script>
 import Title from './components/Title.vue'
 import Button from './components/Button.vue'
-import ListItems from './components/ListItems.vue'
+import PostList from './components/PostList.vue'
 import NewPost from './components/NewPost.vue'
 
 export default {
@@ -64,14 +64,12 @@ export default {
         },
         ...this.items,
       ]
-      
-      console.log(title,category,description,tag);
     }
   },
   components: {
     Title,
     Button,
-    ListItems,
+    PostList,
     NewPost,
   },
 }

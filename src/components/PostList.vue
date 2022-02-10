@@ -1,16 +1,16 @@
 <template>
   <div class="list_items_root" :key="item.id" v-for="item in items">
-      <Item :item="item" />
+      <Post :item="item" />
   </div>
 </template>
 
 <script>
-import Item from './Item.vue'
+import Post from './Post.vue'
 
 export default {
  name: 'ListItems',
    components: {
-    Item,
+    Post,
   },
  props:{
     items: Array,
